@@ -1,8 +1,8 @@
 // Scrivere un programma che chieda all’utente:
 // Il numero di chilometri da percorrere
 // Età del passeggero
-const inputKilometers = parseInt (document.getElementById('kilometers'));
-const inputAge = parseInt (document.getElementById('age'));
+const inputKilometers = parseInt (document.getElementById('kilometers').value);
+const inputAge = parseInt (document.getElementById('age').value);
 const button = document.querySelector('button.send');
 
 
@@ -15,6 +15,9 @@ const button = document.querySelector('button.send');
 button.addEventListener('click', function(){
     let costPerKm = inputKilometers * 0.233;
     let discount;
+    console.log(costPerKm);
+    console.log(inputAge);
+
     if (inputAge<18){
         discount = ((costPerKm * 19.4) / 100);
     } else if (inputAge > 65){
@@ -22,9 +25,12 @@ button.addEventListener('click', function(){
     } else{
         discount = 0;
     }
-    const finalcost = costPerKm - discount;
+    console.log('questo è il discount: '+ discount);
+
+    let finalcost = costPerKm - discount;
     const decimal = finalcost.toFixed(2);
-    console.log(document.getElementById('final-price').innerHTML += finalcost);
+    console.log(decimal)
+    console.log(document.getElementById('final-price').innerHTML = 'Il Costo è:' + " " + decimal +'€')
 });
 
 
