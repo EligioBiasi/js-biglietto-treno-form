@@ -13,6 +13,8 @@ const button = document.querySelector('button.send');
 // va applicato uno sconto del 37.7% per gli over 65.
 
 button.addEventListener('click', function(){
+    const inputKilometers = parseInt (document.getElementById('kilometers').value);
+    const inputAge = parseInt (document.getElementById('age').value);
     let costPerKm = inputKilometers * 0.233;
     let discount;
     console.log(costPerKm);
